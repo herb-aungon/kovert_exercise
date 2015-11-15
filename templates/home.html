@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+
+    <title>Kovert Exercise</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+  </head>
+  <body>
+
+      <div class="container">
+
+	<ul class="nav nav-tabs">
+	  <li role="presentation" ><a  id="home" href="#">Companies from UK</a></li>
+	  <li role="presentation" ><a id="food" href="#">Food Items</a></li>
+
+	</ul>
+
+
+
+	<div style="background:transparent !important" class="jumbotron">
+
+	    {% block company %}{% endblock %}  
+	    {% block food_items %}{% endblock %}  
+
+
+	</div>
+
+      <footer class="footer">
+      <div class="container">
+	<p class="text-muted">&copy; Created by Herbert Aungon 2015</p>
+      </div>
+    </footer>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="{{url_for('static', filename='main.js') }}"></script>
+  </body>
+</html>

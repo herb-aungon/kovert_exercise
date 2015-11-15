@@ -1,0 +1,19 @@
+
+$( document ).ready(function() {
+$('#filter_cal').click(function() {
+   
+    var cal =700;
+
+    $('tr').show();
+
+    $('tr td.calories').each(function() {
+        if ($(this).text().substring(1) > price)
+        {
+            $(this).parent().hide();
+        }
+    });
+    console.log(cal)
+    
+});
+
+});

@@ -1,0 +1,95 @@
+{% extends "home.html" %}
+{% block company %}
+   {{ super() }}
+
+
+	  <h2>UK Company table</h2>
+	  <table class="table table-hover" >
+	    <thead>
+	      <tr>
+		<th>Company</th>
+		<th>Company ID</th>
+		<th>Client Name</th>
+		<th>Client ID</th>
+		<th>County</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	      {% for i in resp %}
+	      <tr>
+	        <td>{{ i.company }}</td>
+	        <td>{{ i.company_id }}</td>
+	        <td>{{ i.client_name }}</td>
+	        <td>{{ i.client_id }}</td>
+	        <td>{{ i.country }}</td>
+	      </tr>
+	      {% endfor %}
+	    </tbody>
+	  </table>
+
+
+
+	  <h2>CompanyClient table</h2>
+	  <table class="table table-hover" >
+	    <thead>
+	      <tr>
+		<th>Company ID</th>
+		<th>Client ID</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	      {% for v in comp_client %}
+	      <tr>
+	        <td>{{ v.company_id }}</td>
+	        <td>{{ v.client_id }}</td>
+	      </tr>
+	      {% endfor %}
+	    </tbody>
+	  </table>
+
+	  <h2>Company table</h2>
+	  <table class="table table-hover" >
+	    <thead>
+	      <tr>
+		<th>ID</th>
+		<th>Company</th>
+	        <th>Address</th>
+		<th>County</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	      {% for r in company %}
+	      <tr>
+	        <td>{{ r.id }}</td>
+	        <td>{{ r.name }}</td>
+	        <td>{{ r.address }}</td>
+	        <td>{{ r.country }}</td>
+	      </tr>
+	      {% endfor %}
+	    </tbody>
+	  </table>
+
+
+
+	  <h2>Client Table</h2>
+	  <table class="table table-hover" >
+	    <thead>
+	      <tr>
+		<th>ID</th>
+		<th>Name</th>
+	        <th>Address</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	      {% for c in client %}
+	      <tr>
+	        <td>{{ c.id }}</td>
+	        <td>{{ c.name }}</td>
+	        <td>{{ c.address }}</td>
+	      </tr>
+	      {% endfor %}
+	    </tbody>
+	  </table>
+
+
+{% endblock %}

@@ -7,8 +7,8 @@ import sys, json,random
 
 #Generate Fake data
 faker = Factory.create()
-#print dir(faker)
-
+# print dir(faker)
+# sys.exit(1)
 resp = {"success":False, "message":None, "data":None}
 try:
     #db = create_engine ( "mysql+pymysql://test@localhost/kovert_db" )
@@ -45,7 +45,7 @@ try:
 
     for s in range(10):
         insert = company_table.insert()
-        new_company = insert.values(name=faker.name(), address=faker.street_name(), country=random.choice( country ) )        
+        new_company = insert.values(name=faker.company(), address=faker.street_name(), country=random.choice( country ) )        
         #establish database connection
         insert_statement = db.connect()
 
