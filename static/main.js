@@ -1,5 +1,5 @@
-//var url = "http://herbportal.ddns.net/"
-var url = "http://localhost:5000/"
+var url = "http://herbportal.ddns.net/"
+//var url = "http://localhost:5000/"
 $( document ).ready(function() {
     $('#filter_cal').click(function() {
 	

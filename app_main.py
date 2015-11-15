@@ -135,7 +135,7 @@ def home_options():
 
 @app.route("/kovert_exercise/food_items", methods = [ 'GET' ] )
 def food_get():
-     with open('/home/herb/Desktop/kovert_exercise/food.xml') as fd:
+     with open('/home/pi/Desktop/kovert_exercise/food.xml') as fd:
           obj = xmltodict.parse(fd.read())
 
      return render_template('food_items.html',food_items=obj.get('breakfast_menu').get('food') )

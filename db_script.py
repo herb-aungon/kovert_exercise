@@ -10,11 +10,22 @@ faker = Factory.create()
 # print dir(faker)
 # sys.exit(1)
 resp = {"success":False, "message":None, "data":None}
+
+try:
+    create_db = create_engine('mysql+pymysql://root:test@localhost/', echo=True)
+    create_db.execute("CREATE DATABASE kovert_db")
+    resp['success']=True
+    resp['message']="DB created"
+except Exception as e:
+    resp['message']="Failed to create! %s" % e
+    print resp
+
 try:
     #db = create_engine ( "mysql+pymysql://test@localhost/kovert_db" )
     db = create_engine('mysql+pymysql://root:test@localhost/kovert_db', echo=True)
     connection = db.connect()
     resp['success']=True
+    resp['message']="Connected!"
     #print dir(db)
     #print "Connected! %s" % (db.raw_connection)
 except Exception as e:
